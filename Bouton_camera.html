@@ -96,12 +96,10 @@
 		
 		function sendPostRequest() {
 			vms.log.info("avant open dynamic3");
-			console.log(vms.ressources.ressources())
+			res = await vms.ressources.ressources()
+			console.log(res)
 			
-			id = vms.resources
-  				.resources()
-  				.find(r => r.name === "Mise en page 3" && r.type === "layout")
-  				?.id || null;
+			id = res.find(r => r.name === "Mise en page 3" && r.type === "layout") ?.id || null;
 
 			console.log(id)
 			
@@ -115,6 +113,7 @@
 </body>
 
 </html>
+
 
 
 
