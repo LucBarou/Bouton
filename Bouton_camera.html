@@ -95,20 +95,21 @@
 		}
 		
 		async function sendPostRequest() {
-			console.log("sendPostRequest")
+			vms.log.info("sendPostRequest")
 			await displayLayout("Mise en page 3")
 		}
 		
 		async function displayLayout(name) {
-			console.log("displayLayout")
+			vms.log.info("displayLayout")
 			res = await vms.resources.resources()
 			id = res.find(r => r.name === name && r.type === "layout") ?.id || null;
-			console.log(id)
+			vms.log.info(id)
 		}
     </script>
 </body>
 
 </html>
+
 
 
 
