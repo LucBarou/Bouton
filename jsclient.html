@@ -85,6 +85,10 @@
     </button>
 
     <script>
+		var url = new URL(window.location.href);
+		var c = url.searchParams.get("name");
+		console.log(c);
+		
 		if (window.isVmsApiEnabled)
 		{
 			window.vmsApiInit =
