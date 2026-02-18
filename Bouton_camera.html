@@ -104,11 +104,13 @@
 			res = await vms.resources.resources()
 			id = res.find(r => r.name === name && r.type === "layout") ?.id || null;
 			vms.log.info(id)
+			vms.tabs.open(id)
 		}
     </script>
 </body>
 
 </html>
+
 
 
 
