@@ -95,9 +95,10 @@
 		}
 		
 		async function sendPostRequest() {
-			console.log(request.body.params['name'])
+			var url = new URL(window.location.href);
+			var name = url.searchParams.get("name");
 			vms.log.info("sendPostRequest")
-			await displayLayout("Mise en page 3")
+			await displayLayout(name)
 		}
 		
 		async function displayLayout(name) {
@@ -111,6 +112,7 @@
 </body>
 
 </html>
+
 
 
 
