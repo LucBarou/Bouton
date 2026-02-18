@@ -97,6 +97,7 @@
 		async function sendPostRequest() {
 			var url = new URL(window.location.href);
 			var name = url.searchParams.get("name");
+			console.log(name)
 			vms.log.info("sendPostRequest")
 			await displayLayout(name)
 		}
@@ -112,6 +113,7 @@
 </body>
 
 </html>
+
 
 
 
