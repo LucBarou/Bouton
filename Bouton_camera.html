@@ -95,13 +95,16 @@
 		}
 		
 		function sendPostRequest() {
-			vms.log.info("avant open dynamic");
+			vms.log.info("avant open dynamic2");
 
 			id = vms.resources
   				.resources()
   				.find(r => r.name === "Mise en page 3" && r.type === "layout")
   				?.id || null;
 
+			console.log(id)
+			console.log(vms.ressources.ressources())
+			
 			vms.tabs.open(id);	/* mise en page 3 */
 			
 			vms.log.info("apres open");
@@ -111,5 +114,6 @@
 </body>
 
 </html>
+
 
 
