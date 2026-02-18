@@ -85,15 +85,28 @@
     </button>
 
     <script>
-       // Tu peux remplacer cette fonction par ce que tu veux faire quand on clique
-        document.querySelector('.camera-button').addEventListener('click', function() {
-            console.log("Le bouton caméra a été cliqué !");
-            // Exemple : Rediriger vers une autre page, déclencher une action, etc.
-        });
+       if (window.isVmsApiEnabled)
+		{
+			window.vmsApiInit =
+			async function()
+			{
+			vms.log.info("Here we have all the API objects initialized");
+			}
+		}
+		
+		function sendPostRequest() {
+			vms.log.info("avant open");
+
+			vms.tabs.open("2a01e10d-fa4e-46b7-b959-ffb270e1b534");
+			
+			vms.log.info("apres open");
+
+		}
     </script>
 </body>
 
 </html>
+
 
 
 
