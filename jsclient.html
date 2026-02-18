@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouton Caméra</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .camera-button {
+            width: 200px;
+            height: 200px;
+            background-color: #1e7bc6;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 8px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .camera-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .camera-button:active {
+            transform: scale(0.98);
+        }
+
+        .camera-icon {
+            width: 100px;
+            height: 70px;
+            position: relative;
+        }
+
+        .camera-lens {
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-left: 50px solid white;
+            position: absolute;
+            left: -20px;
+            top: 6px;
+        }
+
+        .camera-body {
+            width: 100px;
+            height: 60px;
+            background-color: white;
+            border-radius: 8px;
+            position: absolute;
+            left: 15px;
+            top: 5px;
+        }
+
+        .camera-handle {
+            width: 12px;
+            height: 50px;
+            background-color: white;
+            position: absolute;
+            left: 80px;
+            top: -15px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <button class="camera-button" onclick="sendPostRequest()">
+        <div class="camera-icon">
+            <div class="camera-lens"></div>
+            <div class="camera-body"></div>
+            <div class="camera-handle"></div>
+        </div>
+    </button>
+
+    <script>
+		if (window.isVmsApiEnabled)
+		{
+			window.vmsApiInit =
+			async function()
+			{
+			vms.log.info("Here we have all the API objects initialized")
+			}
+		}
+		
+		function sendPostRequest() {
+			vms.tabs.setCurrent("2a01e10d-fa4e-46b7-b959-ffb270e1b534")
+
+		}
+    </script>
+</body>
+</html>
